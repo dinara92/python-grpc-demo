@@ -22,7 +22,7 @@ class UsersService(users_service.UsersServicer):
             user = users_messages.User(
                 username=user.username, user_id=user.user_id
             )
-            yield users_messages.GetUsersResult(user=user)
+            yield users_messages.GetUsersResult(user=user) #get each user and wrap in its according message(type) GetUsersResult
 
 
 def serve():
