@@ -1,14 +1,14 @@
 import grpc
 from functools import partial
 
-class ServiceClient:
 
+class ServiceClient:
     def __init__(self, service_module, stub_name, host, port, timeout=10):
         channel = grpc.insecure_channel('{0}:{1}'.format(host, port))
         try:
             grpc.channel_ready_future(channel).result(timeout=10)
         except grpc.FutureTimeoutError:
-            sys.exit('Error connecting to server')
+            exit('Error connecting to server')
         self.stub = getattr(service_module, stub_name)(channel)
         self.timeout = timeout
 

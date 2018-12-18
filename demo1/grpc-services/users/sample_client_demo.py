@@ -1,7 +1,6 @@
-import sys
-
 import grpc
-
+import sys
+sys.path.insert(0,'/home/dinara/work/grpc-users/python-grpc-demo/demo1/grpc-services/protos/gen-py')
 import users_pb2_grpc as users_service
 import users_types_pb2 as users_messages
 
